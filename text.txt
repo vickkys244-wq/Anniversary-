@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary Anshu ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: radial-gradient(circle at top, #ff4e8a, #8e2de2);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Neon Text */
+.neon {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #fff;
+    text-shadow:
+        0 0 5px #ff4da6,
+        0 0 10px #ff4da6,
+        0 0 20px #ff1a75,
+        0 0 40px #ff1a75,
+        0 0 80px #ff0055;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+        0 0 5px #ff4da6,
+        0 0 10px #ff4da6,
+        0 0 20px #ff1a75;
+    }
+    to {
+        text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff4da6,
+        0 0 40px #ff1a75,
+        0 0 80px #ff0055;
+    }
+}
+
+.container {
+    padding: 30px 20px;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+.photo {
+    width: 90%;
+    max-width: 350px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+button {
+    background: white;
+    color: #ff4e8a;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #ffe6f0;
+    transform: scale(1.05);
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-100vh); opacity: 0; }
+}
+
+@media(max-width: 600px) {
+    .neon { font-size: 1.4rem; }
+    h1 { font-size: 1.8rem; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Anniversary My Love ❤️</h1>
+
+    <div class="neon">
+        I LOVE U ANSHU TILL MY LAST BREATH 💖
+    </div>
+
+    <img src="us.jpg" alt="Our Photo" class="photo">
+
+    <p>
+        Every heartbeat of mine whispers your name.
+        You are my today, my tomorrow, and my forever.
+        No matter what happens in life,
+        I will always choose you. ❤️
+    </p>
+
+    <button onclick="startCelebration()">Click For Surprise 🎉</button>
+</div>
+
+<!-- Romantic Music -->
+<audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<!-- Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+function startCelebration() {
+    document.getElementById("bgMusic").play();
+
+    confetti({
+        particleCount: 250,
+        spread: 140,
+        origin: { y: 0.6 }
+    });
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
